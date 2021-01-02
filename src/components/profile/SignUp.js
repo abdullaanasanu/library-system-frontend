@@ -35,7 +35,7 @@ export default class SignUp extends React.Component {
 
     onFinish = e => {
         console.log('Form Values -> ', e);
-        axios.post('http://localhost:3000/user/sign-up', {
+        axios.post('http://13.212.72.237:3000/user/sign-up', {
             username: e.username,
             email: e.email,
             password: e.password

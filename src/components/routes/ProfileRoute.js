@@ -23,7 +23,7 @@ class ProfileRoute extends React.Component {
   componentDidMount() {
     if (typeof window.localStorage.token !== 'undefined' && window.localStorage.token !== '' ) {
       this.setState({ isLoggedIn: true })
-      axios.get('http://localhost:3000/user/profile', {
+      axios.get('http://13.212.72.237:3000/user/profile', {
           headers: {
               Authorization: window.localStorage.token
           }

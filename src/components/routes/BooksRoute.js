@@ -37,17 +37,17 @@ class BooksRoute extends React.Component {
             this.setState({ redirect: true })
         }
         console.log('token', window.localStorage.token);
-        axios.get('http://localhost:3000/author/list')
+        axios.get('http://13.212.72.237:3000/author/list')
             .then((res) => {
                 console.log('Authors Data -> ', res.data.authors);
                 this.setState({ authors: res.data.authors, isAuthorLoading: false })
             })
-        axios.get('http://localhost:3000/category/list')
+        axios.get('http://13.212.72.237:3000/category/list')
             .then((res) => {
                 console.log('Category Data -> ', res.data.categories);
                 this.setState({ categories: res.data.categories })
             })
-        axios.get('http://localhost:3000/book/list')
+        axios.get('http://13.212.72.237:3000/book/list')
             .then((res) => {
                 console.log('Book Data -> ', res.data.books);
                 this.setState({ books: res.data.books })
@@ -135,7 +135,7 @@ class AddBook extends React.Component {
 
     onFinish = e => {
         console.log('Add Book Data --> ', e);
-        axios.post('http://localhost:3000/book/add', {
+        axios.post('http://13.212.72.237:3000/book/add', {
             name: e.name,
             authorId: e.author,
             categoryId: e.category
@@ -219,7 +219,7 @@ class UpdateBook extends React.Component {
 
     onFinish = e => {
         console.log('Add Book Data --> ', e);
-        axios.post('http://localhost:3000/book/add', {
+        axios.post('http://13.212.72.237:3000/book/add', {
             name: e.name,
             authorId: e.author,
             categoryId: e.category

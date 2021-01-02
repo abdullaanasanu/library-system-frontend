@@ -64,17 +64,17 @@ class StudentRoute extends React.Component {
             this.setState({ redirect: true })
         }
         console.log('token', window.localStorage.token);
-        axios.get('http://localhost:3000/author/list')
+        axios.get('http://13.212.72.237:3000/author/list')
             .then((res) => {
                 console.log('Authors Data -> ', res.data.authors);
                 this.setState({ authors: res.data.authors, isAuthorLoading: false })
             })
-        axios.get('http://localhost:3000/category/list')
+        axios.get('http://13.212.72.237:3000/category/list')
             .then((res) => {
                 console.log('Category Data -> ', res.data.categories);
                 this.setState({ categories: res.data.categories })
             })
-        axios.get('http://localhost:3000/student/list')
+        axios.get('http://13.212.72.237:3000/student/list')
             .then((res) => {
                 console.log('Student Data -> ', res.data.students);
                 this.setState({ students: res.data.students })
@@ -116,7 +116,7 @@ class StudentRoute extends React.Component {
 
     confirmDeleteStudent = (id) => {
         let _this = this;
-        axios.delete('http://localhost:3000/student/remove/'+id)
+        axios.delete('http://13.212.72.237:3000/student/remove/'+id)
             .then((res) => {
                 message.success('Student Removed!')
                 let studentList = _.reject(this.state.students, {
@@ -234,7 +234,7 @@ class AddStudent extends React.Component {
 
     onFinish = e => {
         console.log('Add Student Data --> ', e);
-        axios.post('http://localhost:3000/student/add', {
+        axios.post('http://13.212.72.237:3000/student/add', {
             name: e.name,
             admissionNo: e.admissionNo
         }).then((res) => {
@@ -298,7 +298,7 @@ class UpdateStudent extends React.Component {
 
     onFinish = e => {
         console.log('Add Student Data --> ', e);
-        axios.post('http://localhost:3000/book/add', {
+        axios.post('http://13.212.72.237:3000/book/add', {
             name: e.name,
             authorId: e.author,
             categoryId: e.category
